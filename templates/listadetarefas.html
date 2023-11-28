@@ -1,0 +1,52 @@
+{% extends "modelo.html" %}
+{% block conteudo %}
+<section>
+<div id="glossario">
+  <h1 id="list-title">Lista de Tarefas</h1>
+  <p id="list-description">
+      Nesta página você pode gerencias suas tarefas.
+  </p>
+<div class="container3">
+    <div class="column">
+  {% for tarefa in tasklist %}
+        <div class="side">
+    <h3 class="task">{{tarefa[0]}}</h3>
+          <form class="del-list"   method="post" action="{{ url_for('excluir_termo_listadetarefas', task_id=loop.index-1) }}">
+              <button type="submit" id="btn1">
+                  <img  src="static/img/close.png" alt="Excluir">
+            </button>
+          </form>
+            </div>
+  {% endfor %}
+    </div>
+<div class="plus">
+    <button class="add btn btn-success" data-bs-toggle="modal" data-bs-target="#addTaskModal">Adicionar tarefa</button>
+</div>
+
+<div class="modal fade" id="addTaskModal" tabindex="-1" aria-labelledby="addTaskModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"  id="addTaskModalLabel">Adicionar Tarefa</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <form action="{{ url_for('criar_task_list')}}" method="post">
+          <div class="mb-3">
+            <label for="Tarefa" class="form-label">Tarefa</label>
+            <input type="text" class="form-control" id="Tarefa" name="Tarefa" aria-describedby="taskHelp">
+            <div id="taskHelp" class="form-text">Tarefa para ser adicionada</div>
+          </div>
+          <button type="submit" class="btn btn-success">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+</div>
+</section>
+{% endblock %}
