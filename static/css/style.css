@@ -1,0 +1,543 @@
+@import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+@import url("https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Inknut", sans-serif;
+}
+
+header {
+  background-color: #1B474D;
+  box-shadow: 0px 3px 10px #464646;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+  height:60px;
+  padding:5px 3em;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo h1 {
+  color: #fff;
+}
+.logo img{
+    padding:10px;
+    width:110px;
+    height:110px;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  margin: 0px;
+
+}
+
+.nav-item {
+  margin: 0 15px;
+
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 1.15rem;
+  color: white;
+  font-weight: 400;
+}
+ul li a{
+    color:#FFF;
+    text-decoration: none;
+    text-align: center;
+}
+.menu-hover:hover{
+    width:100%;
+    background-color: #113034;
+}
+ul li ul.dropdown li{
+    display: block;
+    text-align:center;
+    padding:5px;
+}
+ul li ul.dropdown{
+    width: 150px;
+    background: #1B474D;
+    position: absolute;
+    z-index:999;
+    display: none ;
+    border-radius:5px;
+}
+.menu-radius{
+    border-radius:5px;
+}
+
+ul li:hover ul.dropdown{
+
+    display: block;
+    padding:0px;
+    padding-top:10px;
+    text-align:center;
+}
+.mobile-menu-icon {
+  display: none;
+  border:none;
+
+}
+.menu-svg{
+    border:none;
+    background:none;
+}
+.mobile-menu {
+  display: none;
+}
+
+@media screen and (max-width: 730px) {
+  .nav-bar {
+    padding: 1.5rem 4rem;
+  }
+  .nav-item {
+    display: none;
+  }
+
+  .mobile-menu-icon {
+    display: block;
+  }
+
+  .mobile-menu-icon {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  .mobile-menu ul {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 1rem;
+  }
+
+  .mobile-menu .nav-item {
+    display: block;
+    padding-top: 1.2rem;
+  }
+
+  .open {
+    display: block;
+  }
+}
+
+.container2{
+  display: flex;
+  text-align: center;
+  justify-content: space-evenly;
+}
+
+.container2{
+  height: 100vh;
+  align-items: center;
+}
+
+
+body{
+
+}
+section{
+    background-image: url(../img/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+
+
+}
+
+#logo{
+
+}
+
+#text{
+    padding-top: 60px;
+    text-align: center;
+    color: white;
+
+
+}
+#title{
+    font-size: 40px;
+    text-shadow: 1px 1px 5px black;
+    padding-left: 10px;
+
+
+}
+#description{
+    width:900px;
+    text-align:justify;
+    margin:auto;
+    font-size: 20px;
+    padding-top: 10px;
+
+}
+
+#cards{
+    height: 300px;
+
+    margin:auto;
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: space-evenly;
+    align-items: center;
+}
+@media screen and (max-width: 800px) {
+    #description{
+        width:100%;
+        padding:20px;
+    }
+    section{
+        background-repeat: no-repeat;
+        height: 800px;
+    }
+}
+@media screen and (max-width: 600px) {
+    section{
+        background-repeat: no-repeat;
+        height: 1100px;
+    }
+}
+#card1,#card2,#card3{
+    text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.551);
+    background-color: #1B474D;
+    width: 200px;
+    height: 209px;
+    text-align: center;
+    margin: 20px;
+    text-decoration: none;
+    border-radius:8px;
+    box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.586);
+}
+@media screen and (max-width: 600px) {
+   #card1,#card2,#card3 {
+       width: 200px;
+       height:209px;
+   }
+
+   section{
+       background-repeat: no-repeat;
+       height: 1100px;
+   }
+}
+
+#card1 h4,#card2 h4,#card3 h4{
+    display: flex;
+    font-size:26px;
+    justify-content: center;
+    align-items: center;
+    height: 90px;
+
+}
+#card1 a,#card2 a, #card3 a{
+    text-decoration: none;
+    color: white;
+}
+#card:hover{
+
+}
+#image1, #image2, #image3{
+    display: flex;
+    height: 133px;
+    width: 200px;
+    border-radius: 8px 8px 0px 0px;
+}
+@media screen and (max-width: 600px) {
+   #image1, #image2, #image3 {
+       width: 200px;
+
+   }
+   section{
+       background-repeat: no-repeat;
+       height: 1100px;
+   }
+}
+
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    background-color: #1B474D;
+    color: white;
+}
+footer p{
+    margin-bottom:0;
+}
+
+
+/* --- Glossário ---*/
+
+#glossario{
+    background:white;
+    margin-left:50px;
+    margin-right:50px;
+    text-align:center;
+    padding-top:30px;
+    padding-bottom:20px;
+    border-radius: 0px 0px 4px 4px;
+    color:black;
+}
+#gloss-title{
+    background-color:#446368;
+    color:white;
+
+    padding:10px;
+    text-align:center;
+    margin-bottom:15px;
+    width:100%;
+    font-weight:700;
+
+}
+#gloss-description{
+    text-align:justify;
+    width:100%;
+    margin-bottom:10px;
+    font-size:18px;
+    font-weight:400;
+    padding:30px;
+    padding-bottom:20px;
+    padding-top:20px;
+}
+.container1{
+
+
+    margin-bottom:20px;
+    align-items:center;
+    padding:60px;
+    padding-top:20px;
+    padding-bottom:20px;
+    border-radius:10px;
+}
+
+
+.term{
+
+    text-align:justify;
+    font-weight:500;
+
+    margin-bottom:15px;
+    border-radius:7px 7px 0px 0px;
+
+
+}
+.def{
+    text-align:justify;
+    margin:0;
+    font-weight:400;
+    width:1000px;
+
+
+}
+.flex{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+
+
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: black;
+}
+.line2 {
+  width: 100%;
+  height: 1px;
+  background-color: white;
+}
+
+#btn {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-color: transparent;
+}
+#adicionar{
+    background:#446368;
+}
+
+#btn img {
+  width: 100%;
+  height: 100%;
+}
+@media (max-width: 800px) {
+  .flex {
+    flex-wrap:wrap;
+    justify-content: flex-end;
+  }
+
+  #btn{
+    width:40px;
+    height:40px;
+    margin-top:20px;
+  }
+}
+
+/* --- Lista de Tarefas ---*/
+.container3{
+    display:flex;
+    align-items:center;
+    justify-content:space-evenly;
+
+}
+.column{
+      display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+.column h3{
+      display:flex;
+
+    align-items:center;
+}
+.side{
+    display:flex;
+    align-items:center;
+    margin:10px;
+}
+.side button {
+  margin-left: 10px;
+}
+.task{
+display:flex;
+align-items:center;
+justify-content:center;
+background: #6eaab4;
+border-radius:5px;
+font-size: 18px;
+width:400px;
+height:40px;
+margin:0;
+}
+@media screen and (max-width: 700px) {
+    .task{
+        width:400px;
+    }
+   .container3{
+        flex-wrap:wrap;
+
+   }
+}
+@media screen and (max-width: 600px) {
+    .task{
+        width:200px;
+    }
+   .container3{
+        flex-wrap:wrap;
+
+   }
+}
+
+#btn1{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#446368;
+    border-radius:5px;
+    width:70px;
+    height:40px;
+    padding:10px 5px 10px 5px;
+    border: none;
+
+}
+#btn1 img{
+
+  width: 15px;
+  height: 15px;
+
+}
+.del-list{
+    display:flex;
+    align-items:center;
+
+}
+/* ----- Sobre ---- */
+.container-wrap{
+   height:100vh;
+  display: flex;
+  text-align: center;
+  justify-content: space-evenly;
+  align-items:center;
+}
+.colab{
+
+    width:400px;
+}
+.colab a{
+
+    display:flex;
+    margin:auto;
+    justify-content:center;
+    text-decoration:none;
+    border-radius:2px;
+    width:240px;
+    color:black;
+    background:white;
+}
+.avatar{
+    margin-top:20px;
+    width:250px;
+    height:250px;
+    border-radius:50%;
+}
+@media screen and (max-width: 800px) {
+   .container-wrap{
+        flex-wrap:wrap;
+        height:1000px;
+
+   }
+}
+@media screen and (max-width: 600px) {
+   .container-wrap{
+        flex-wrap:wrap;
+        height:1500px;
+   }
+}
+
+/* ----- Modal -----*/
+
+.modal-body{
+display: flex;
+flex-direction:column;
+}
+.modal-defi{
+    margin-top: 15px;
+}
+.btn{
+    background-color:#1B474D;
+    color:white;
+}
+.btn:hover{
+}
+#term{
+    width:200px;
+}
+#defi{
+    height:100px;
+}
