@@ -1,18 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
+
+    font-family: "Montserrat", sans-serif;
+
 }
-@import url("https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300&display=swap");
-* {
-  padding: 0;
-  margin: 0;
-  font-family: "Inknut", sans-serif;
-}
+
 
 header {
   background-color: #1B474D;
@@ -62,11 +58,11 @@ header {
 .nav-link {
   text-decoration: none;
   font-size: 1.15rem;
-  color: white;
+  color: white !important;
   font-weight: 400;
 }
 ul li a{
-    color:#FFF;
+    color:white;
     text-decoration: none;
     text-align: center;
 }
@@ -149,26 +145,24 @@ ul li:hover ul.dropdown{
   display: flex;
   text-align: center;
   justify-content: space-evenly;
-}
-
-.container2{
   height: 100vh;
   align-items: center;
 }
 
 
-body{
-
-}
 section{
     background-image: url(../img/bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    min-height: 83.2vh;
+}
+#container-index{
+    display:flex;
+    align-items:center;
+    flex-direction:column;
 
 
 }
-
 #logo{
 
 }
@@ -183,28 +177,28 @@ section{
 #title{
     font-size: 40px;
     text-shadow: 1px 1px 5px black;
-    padding-left: 10px;
+
 
 
 }
 #description{
     width:900px;
     text-align:justify;
-    margin:auto;
+    margin: 0 auto;
     font-size: 20px;
+    padding:0;
     padding-top: 10px;
 
 }
 
 #cards{
-    height: 300px;
-
-    margin:auto;
+    height:320px;
+    width:100%;
     display: flex;
     flex-wrap: wrap;
-
     justify-content: space-evenly;
     align-items: center;
+    margin:0;
 }
 @media screen and (max-width: 800px) {
     #description{
@@ -213,13 +207,20 @@ section{
     }
     section{
         background-repeat: no-repeat;
-        height: 800px;
+    }
+    #container-index{
+        height:800px;
+    }
+    #cards{
+        margin: 0 auto;
     }
 }
 @media screen and (max-width: 600px) {
-    section{
-        background-repeat: no-repeat;
-        height: 1100px;
+    #container-index{
+        height:1200px;
+    }
+        #cards{
+        margin: 0 auto;
     }
 }
 #card1,#card2,#card3{
@@ -247,10 +248,11 @@ section{
 
 #card1 h4,#card2 h4,#card3 h4{
     display: flex;
-    font-size:26px;
+    font-size:22px;
     justify-content: center;
     align-items: center;
-    height: 90px;
+    height: 76px;
+    margin:0;
 
 }
 #card1 a,#card2 a, #card3 a{
@@ -273,7 +275,7 @@ section{
    }
    section{
        background-repeat: no-repeat;
-       height: 1100px;
+
    }
 }
 
@@ -379,7 +381,7 @@ footer p{
   background-color: transparent;
 }
 #adicionar{
-    background:#446368;
+    background-color:#446368;
 }
 
 #btn img {
@@ -402,14 +404,36 @@ footer p{
 /* --- Lista de Tarefas ---*/
 .container3{
     display:flex;
-    align-items:center;
-    justify-content:space-evenly;
+    flex-direction:column;
+    justify-content:flex-end;
 
 }
 .column{
-      display:flex;
+    display:flex;
     flex-direction:column;
     align-items:center;
+}
+.plus{
+    display:flex;
+    margin: 0 auto;
+
+    justify-content:flex-start;
+    width:435px;
+    background:none;
+}
+.plus:hover img {
+  background-image: url('static/img/plus2.png');
+}
+.add{
+padding:10px;
+    border:none;
+    background:none;
+
+}
+.add:hover{
+    background-color:#446368 !important;
+    transition:0.5s;
+    border-radius:50%;
 }
 .column h3{
       display:flex;
@@ -433,7 +457,7 @@ border-radius:5px;
 font-size: 18px;
 width:400px;
 height:40px;
-margin:0;
+margin:0 auto;
 }
 @media screen and (max-width: 700px) {
     .task{
@@ -453,15 +477,13 @@ margin:0;
 
    }
 }
-
 #btn1{
     display:flex;
     justify-content:center;
     align-items:center;
-    background:#446368;
+    background:none;
     border-radius:5px;
-    width:70px;
-    height:40px;
+
     padding:10px 5px 10px 5px;
     border: none;
 
@@ -479,14 +501,14 @@ margin:0;
 }
 /* ----- Sobre ---- */
 .container-wrap{
-   height:100vh;
+   height:83.2vh;
   display: flex;
   text-align: center;
   justify-content: space-evenly;
   align-items:center;
 }
 .colab{
-
+    color:white;
     width:400px;
 }
 .colab a{
@@ -502,21 +524,21 @@ margin:0;
 }
 .avatar{
     margin-top:20px;
-    width:250px;
-    height:250px;
+    width:170px;
+    height:170px;
     border-radius:50%;
 }
 @media screen and (max-width: 800px) {
    .container-wrap{
         flex-wrap:wrap;
-        height:1000px;
+        height:1600px;
 
    }
 }
 @media screen and (max-width: 600px) {
    .container-wrap{
         flex-wrap:wrap;
-        height:1500px;
+        height:1600px;
    }
 }
 
@@ -526,18 +548,34 @@ margin:0;
 display: flex;
 flex-direction:column;
 }
+
+
+.modal-body input, #definicao{
+ border:none;
+ background-color:lightgray;
+
+}
+
+.modal-content{
+    background-color: white;
+}
+.btn{
+    color: white !important;
+    background-color:#446368 !important;
+}
+.modal-body label{
+    display:flex;
+    font-weight:800px;
+    text-align:justify;
+}
 .modal-defi{
     margin-top: 15px;
 }
-.btn{
-    background-color:#1B474D;
-    color:white;
+
+#definicao:focus{
+    background-color: white;
 }
-.btn:hover{
-}
-#term{
-    width:200px;
-}
-#defi{
+#definicao{
+    padding:0;
     height:100px;
 }
