@@ -13,12 +13,13 @@
 </div>
   {% for tarefa in tasklist %}
         <div class="side">
-    <h3 class="task">{{tarefa[0]}}</h3>
-          <form class="del-list"   method="post" action="{{ url_for('excluir_termo_listadetarefas', task_id=loop.index-1) }}">
+                      <form class="del-list"   method="post" action="{{ url_for('excluir_termo_listadetarefas', task_id=loop.index-1) }}">
               <button type="submit" id="btn1">
                   <img  src="static/img/close2.png" alt="Excluir">
             </button>
           </form>
+    <h3 class="task">{{tarefa[0]}}</h3>
+
             </div>
   {% endfor %}
     </div>
@@ -36,7 +37,7 @@
         <form action="{{ url_for('criar_task_list')}}" method="post">
           <div class="mb-3">
             <label for="Tarefa" class="form-label">Digite uma tarefa</label>
-            <input type="text" class="form-control" id="Tarefa" name="Tarefa" aria-describedby="taskHelp">
+            <input type="text" class="form-control" id="Tarefa" name="Tarefa" aria-describedby="taskHelp" maxlength="100" placeholder="Até 100 caracteres">
 
           </div>
           <button type="submit" class="btn" style="background-color:#446368;">Enviar</button>
