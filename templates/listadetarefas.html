@@ -8,44 +8,28 @@
   </p>
 <div class="container3">
     <div class="column">
-        <div class="plus">
-    <button class="add btn1" data-bs-toggle="modal" data-bs-target="#addTaskModal" ><img src="static/img/plus.png"></button>
-</div>
-  {% for tarefa in tasklist %}
+            <form class="plus" action="{{ url_for('criar_task_list')}}" method="post">
+                <div>
+                    <input type="text" class="form-control" id="Tarefa" name="Tarefa" aria-describedby="taskHelp" maxlength="100" placeholder="Até 100 caracteres">
+                </div>
+                <div>
+                    <button class="add btn1" type="submit">
+                        <img src="static/img/plus.png">
+                    </button>
+                </div>
+            </form>
+        {% for tarefa in tasklist %}
         <div class="side">
-                      <form class="del-list"   method="post" action="{{ url_for('excluir_termo_listadetarefas', task_id=loop.index-1) }}">
+            <form class="del-list"   method="post" action="{{ url_for('excluir_termo_listadetarefas', task_id=loop.index-1) }}">
               <button type="submit" id="btn1">
                   <img  src="static/img/close2.png" alt="Excluir">
-            </button>
-          </form>
-    <h3 class="task">{{tarefa[0]}}</h3>
+                </button>
+            </form>
+            <h3 class="task">{{tarefa[0]}}</h3>
 
-            </div>
-  {% endfor %}
+        </div>
+        {% endfor %}
     </div>
-
-
-<div class="modal fade" id="addTaskModal" tabindex="-1" aria-labelledby="addTaskModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content" style="background-color:#fff">
-      <div class="modal-header">
-        <h5 class="modal-title"  id="addTaskModalLabel">Adicionar Tarefa</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-
-      <div class="modal-body">
-        <form action="{{ url_for('criar_task_list')}}" method="post">
-          <div class="mb-3">
-            <label for="Tarefa" class="form-label">Digite uma tarefa</label>
-            <input type="text" class="form-control" id="Tarefa" name="Tarefa" aria-describedby="taskHelp" maxlength="100" placeholder="Até 100 caracteres">
-
-          </div>
-          <button type="submit" class="btn" style="background-color:#446368;">Enviar</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
 
 </div>
 
