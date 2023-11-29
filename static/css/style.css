@@ -4,11 +4,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
     font-family: "Montserrat", sans-serif;
-
 }
-
 
 header {
   background-color: #1B474D;
@@ -19,7 +16,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items:center;
-  height:60px;
+  height:8vh;
   padding:5px 3em;
 }
 
@@ -416,30 +413,33 @@ footer p{
     display:flex;
     flex-direction:column;
     align-items:center;
+
 }
 .plus{
     display:flex;
     margin: 0 auto;
+    justify-content:center;
 
-    justify-content:flex-end;
-    width:900px;
     background:none;
+}
+.plus input{
+    width:570px;
 }
 
 .add{
-padding:10px;
+
+    padding:5px;
     border:none;
     background:none;
 
 }
 .add:hover{
     background-color:#446368 !important;
-    transition:0.5s;
+    transition:0.3s;
     border-radius:50%;
 }
 .column h3{
-      display:flex;
-
+     display:flex;
     align-items:center;
 }
 .side{
@@ -448,7 +448,7 @@ padding:10px;
     margin:10px;
 }
 .side button {
-  margin-left: 10px;
+
 }
 .task{
 display:flex;
@@ -458,34 +458,75 @@ background-color:#446368;
 color:white;
 border-radius:5px;
 font-size: 18px;
-width:900px;
+width:600px;
 height:40px;
-margin-left:35px;
+margin-left:15px;
+margin-right:55px;
 margin-bottom:0px;
  text-align:justify;
 
 }
-@media screen and (max-width: 700px) {
-    .task{
-        width:400px;
+/* Media queries for screen sizes up to 800px */
+@media screen and (max-width: 800px) {
+    .column {
+       width: 100%;
     }
-   .container3{
-        flex-wrap:wrap;
 
-   }
-}
-@media screen and (max-width: 600px) {
-    .task{
-        width:200px;
+    form .plus {
+        width: 451px;
     }
-   .container3{
-        flex-wrap:wrap;
 
-   }
+    .plus input {
+        width: 170px;
+    }
 }
+
+/* Media queries for screen sizes up to 759px */
+@media screen and (max-width: 759px) {
+    .column {
+        width: 100%;
+    }
+
+    .task {
+        width: 400px;
+        height: 100px;
+    }
+}
+
+/* Media queries for screen sizes up to 640px */
+@media screen and (max-width: 640px) {
+    .plus input {
+        width: 300px;
+    }
+
+    .column {
+        width: 100%;
+    }
+
+    .task {
+        width: 300px;
+        height: 100px;
+    }
+
+}
+
+/* Media queries for screen sizes from 639px to 555px */
+@media screen and (max-width: 555px) {
+    .column {
+        width: 100%;
+    }
+
+    .task {
+        width: 300px;
+        height: 100px;
+        padding: 30px 20px;
+    }
+}
+
+
 #btn1{
     display:flex;
-    justify-content:center;
+
     align-items:center;
     background:none;
     border-radius:5px;
