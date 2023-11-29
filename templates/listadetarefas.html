@@ -1,0 +1,38 @@
+{% extends "modelo.html" %}
+{% block conteudo %}
+<section>
+<div id="glossario">
+  <h1 id="list-title">Lista de Tarefas</h1>
+  <p id="list-description">
+      Nesta página você pode gerencias suas tarefas.
+  </p>
+<div class="container3">
+    <div class="column">
+            <form class="plus" action="{{ url_for('criar_task_list')}}" method="post">
+                <div>
+                    <input type="text" class="form-control" id="Tarefa" name="Tarefa" aria-describedby="taskHelp" maxlength="100" placeholder="Até 100 caracteres">
+                </div>
+                <div>
+                    <button class="add btn1" type="submit">
+                        <img src="static/img/plus.png">
+                    </button>
+                </div>
+            </form>
+        {% for tarefa in tasklist %}
+        <div class="side">
+            <form class="del-list"   method="post" action="{{ url_for('excluir_termo_listadetarefas', task_id=loop.index-1) }}">
+              <button type="submit" id="btn1">
+                  <img  src="static/img/close2.png" alt="Excluir">
+                </button>
+            </form>
+            <h3 class="task">{{tarefa[0]}}</h3>
+
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+</div>
+</section>
+{% endblock %}

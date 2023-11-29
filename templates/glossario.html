@@ -1,0 +1,49 @@
+{% extends "modelo.html" %}
+{% block conteudo %}
+<section>
+<div id="glossario">
+  <h1 id="gloss-title">Glossário</h1>
+  <p id="gloss-description">Nesta página, você encontrará uma lista de termos e definições que foram citados em sala de aula. Sinta-se à vontade para personalizar esta lista para atender às suas necessidades de estudo.
+  O glossário é uma ferramenta importante para o aprendizado. Ele pode ajudá-lo a entender os conceitos apresentados em sala de aula e a se preparar para provas e trabalhos.</p>
+    <button type="button" id="adicionar" class="btn" data-bs-toggle="modal" data-bs-target="#addGlossarioModal">Adicionar</button>
+<div class="modal fade" id="addGlossarioModal" tabindex="-1" aria-labelledby="addGlossarioModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content" >
+        <div class="modal-header">
+          <h5 class="modal-title" id="addGlossarioModalLabel">Adicione um novo termo</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="{{ url_for('criar_termo')}}" method="post">
+            <div class="mb-3">
+              <label for="termo" class="form-label">Termo</label>
+              <input  class="form-control" id="termo" name="termo"  >
+            </div>
+            <div class="mb-3">
+              <label for="definicao" class="form-label">Definição</label>
+              <textarea class="form-control" id="definicao" name="definicao"  rows="3"></textarea>
+            </div>
+            <button type="submit"  class="btn">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% for termo in glossario %}
+  <div class="container1">
+        <h3 class="term">{{termo[0]}}</h3>
+      <div class="flex">
+            <p class="def">{{termo[1]}}</p>
+    <form method="post" action="{{ url_for('excluir_termo', termo_id=loop.index-1) }}">
+        <button type="submit" id="btn">
+            <img src="static/img/disposal.png" alt="Excluir">
+        </button>
+    </form>
+        </div>
+  </div>
+    <div class="line"></div>
+  {% endfor %}
+
+</div>
+</section>
+{% endblock %}
